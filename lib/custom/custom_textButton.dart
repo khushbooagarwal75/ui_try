@@ -7,21 +7,17 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final String text;
   final Color textColor;
-  @override
   Widget build(BuildContext context) {
     return TextButton(
-
         style: ButtonStyle(
           backgroundColor: MaterialStatePropertyAll(color),
         ),
-        onPressed: (){
-
-        },
+        onPressed: () { },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 60.0,vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 60.0,vertical: 6.0),
           child: Text(text,
             style: TextStyle(
-                fontSize: 22,
+                fontSize: 20,
                 color: textColor,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.bold

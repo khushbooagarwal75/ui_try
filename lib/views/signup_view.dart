@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_try/custom/custom_textButton.dart';
 import 'package:ui_try/custom/custom_textfield.dart';
+import 'package:ui_try/views/login_View.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -16,7 +17,7 @@ class SignUp extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
               "Sign up",
@@ -25,9 +26,6 @@ class SignUp extends StatelessWidget {
                   color: Colors.black,
                   decoration: TextDecoration.none,
                   fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 10,
             ),
             Text(
               "Create your account",
@@ -38,9 +36,10 @@ class SignUp extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: 40,
+              height: 80,
             ),
             CustomTextfield(
+              type: TextInputType.text,
               label: "Username",
               controller: username,
               prefixIcon: Icon(Icons.person),
@@ -49,6 +48,7 @@ class SignUp extends StatelessWidget {
               height: 20,
             ),
             CustomTextfield(
+              type: TextInputType.emailAddress,
               label: "Email",
               controller: email,
               prefixIcon: Icon(Icons.email),
@@ -59,12 +59,13 @@ class SignUp extends StatelessWidget {
             CustomTextfield(
               label: "Password",
               controller: password,
-              prefixIcon: Icon(Icons.lock_outline),
+              prefixIcon: Icon(Icons.lock_outline), type: TextInputType.visiblePassword,
             ),
             SizedBox(
               height: 20,
             ),
             CustomTextfield(
+              type:TextInputType.visiblePassword,
               label: "Confirm Password",
               controller: confirmPassword,
               prefixIcon: Icon(Icons.lock_outline),
@@ -82,55 +83,66 @@ class SignUp extends StatelessWidget {
             ),
             Text("Or"),
             SizedBox(
-              height: 10,
-            ),
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-             child: SizedBox(
-               height: 40,
-               width: double.infinity,
-               child: Container(
-                 decoration: BoxDecoration(
-                     border: Border.all(
-                         color: Colors.orange.shade400,
-                     ),
-                   borderRadius: BorderRadius.circular(20)
-                 ),
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                     Icon(Icons.g_mobiledata_outlined),
-                     RichText(text: const TextSpan(children:[
-                         TextSpan(text:"Log In with ",style: TextStyle(color: Colors.black)),
-                       TextSpan(text: "Google",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black))
-                     ],
-                     ),),
-
-                   ],
-                 ),
-               ),
-             ),
-           ),
-            SizedBox(
               height: 20,
             ),
-            RichText(text: TextSpan(
-                children: [
-                  TextSpan(text: "Already have an account?",style: TextStyle(color: Colors.black)),
-                  TextSpan(text: " Login",style: TextStyle(color: Colors.deepOrange)),
-
-                ]
-            )),
-            SizedBox(height: 10,),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: SizedBox(
+                height: 40,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.orange.shade400,
+                      ),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.g_mobiledata_outlined),
+                      RichText(
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                                text: "Log In with ",
+                                style: TextStyle(color: Colors.black)),
+                            TextSpan(
+                                text: "Google",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black))
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            RichText(
+                text: TextSpan(children: [
+              TextSpan(
+                  text: "Already have an account?",
+                  style: TextStyle(color: Colors.black)),
+              TextSpan(
+                  text: " Login ", style: TextStyle(color: Colors.deepOrange)),
+            ])),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 100.0),
               child: LinearProgressIndicator(
                 backgroundColor: Colors.black,
                 color: Colors.deepOrange,
-
-
               ),
-            )
+            ),
+            SizedBox(
+              height: 50,
+            ),
           ],
         ),
       ),
