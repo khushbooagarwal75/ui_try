@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_try/custom/custom_textButton.dart';
 import 'package:ui_try/custom/custom_textfield.dart';
@@ -101,7 +103,7 @@ class SignUp extends StatelessWidget {
                     children: [
                       Icon(Icons.g_mobiledata_outlined),
                       RichText(
-                        text: const TextSpan(
+                        text:  TextSpan(
                           children: [
                             TextSpan(
                                 text: "Log In with ",
@@ -123,13 +125,16 @@ class SignUp extends StatelessWidget {
               height: 40,
             ),
             RichText(
-                text: TextSpan(children: [
+                text:  TextSpan(children: [
               TextSpan(
                   text: "Already have an account?",
                   style: TextStyle(color: Colors.black)),
               TextSpan(
-                  text: " Login ", style: TextStyle(color: Colors.deepOrange)),
-            ])),
+                  text: " Login ",recognizer: TapGestureRecognizer()..onTap = () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
+              }, style: TextStyle(color: Colors.deepOrange)),
+            ])
+            ),
             SizedBox(
               height: 10,
             ),

@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_try/views/signup_view.dart';
 
 import '../custom/custom_textButton.dart';
 import '../custom/custom_textfield.dart';
@@ -52,20 +55,25 @@ class Login extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-             Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-               child: SizedBox(
-                 width: double.infinity,
-                 child: Container(
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(15),
-                     color: Colors.deepOrange,
+             GestureDetector(
+               onTap: () {
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));
+               },
+               child: Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                 child: SizedBox(
+                   width: double.infinity,
+                   child: Container(
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(15),
+                       color: Colors.deepOrange,
+                     ),
+                    child: CustomButton(
+                      color: Colors.deepOrange,
+                      textColor: Colors.white,
+                      text: "Login Now",
+                    ),
                    ),
-                  child: CustomButton(
-                    color: Colors.deepOrange,
-                    textColor: Colors.white,
-                    text: "Login Now",
-                  ),
                  ),
                ),
              ),
@@ -85,7 +93,9 @@ class Login extends StatelessWidget {
                         text: "Don't have an account?",
                         style: TextStyle(color: Colors.black)),
                     TextSpan(
-                        text: " Sign Up ", style: TextStyle(color: Colors.deepOrange)),
+                        text: " Sign Up ",recognizer: TapGestureRecognizer()..onTap = () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));
+                        }, style: TextStyle(color: Colors.deepOrange)),
                   ])),
               SizedBox(
                 height: 10,
