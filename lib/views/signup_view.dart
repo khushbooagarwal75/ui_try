@@ -44,36 +44,36 @@ class SignUp extends StatelessWidget {
               type: TextInputType.text,
               label: "Username",
               controller: username,
-              prefixIcon: Icon(Icons.person),
+              prefixIcon: Icon(Icons.person,size: 28,),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             CustomTextfield(
               type: TextInputType.emailAddress,
               label: "Email",
               controller: email,
-              prefixIcon: Icon(Icons.email),
+              prefixIcon: Icon(Icons.email,size: 28,),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             CustomTextfield(
               label: "Password",
               controller: password,
-              prefixIcon: Icon(Icons.lock_outline), type: TextInputType.visiblePassword,
+              prefixIcon: Icon(Icons.lock_outline, size: 28,), type: TextInputType.visiblePassword,
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             CustomTextfield(
               type:TextInputType.visiblePassword,
               label: "Confirm Password",
               controller: confirmPassword,
-              prefixIcon: Icon(Icons.lock_outline),
+              prefixIcon: Icon(Icons.lock_outline, size: 28,),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             CustomButton(
               color: Colors.deepOrange,
@@ -139,14 +139,24 @@ class SignUp extends StatelessWidget {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 100.0),
-              child: LinearProgressIndicator(
-                backgroundColor: Colors.black,
-                color: Colors.deepOrange,
+          padding: const EdgeInsets.symmetric(horizontal: 100.0),
+          child: Container(
+            height: 4, // Set the thickness of the line
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black,
+                  Colors.orange,
+                ],
+                stops: [0.77, 0.3], // Control the division of colors
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
             ),
+          ),
+        ),
             SizedBox(
-              height: 50,
+              height: 60,
             ),
           ],
         ),

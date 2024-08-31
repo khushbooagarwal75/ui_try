@@ -14,12 +14,16 @@ class CustomTextfield extends StatelessWidget {
       child: TextField(
         controller: controller,
         keyboardType: type,
+
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           hintText: label,
           filled: true,
           fillColor: Colors.deepOrange.shade50,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15),borderSide: BorderSide(color: Colors.white)),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10),
+          )
         ),
       ),
     );
