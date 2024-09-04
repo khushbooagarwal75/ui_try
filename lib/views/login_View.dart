@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
             Text(
               "Enter your credential for login",
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 14,
                 color: Colors.black,
                 decoration: TextDecoration.none,
               ),
@@ -42,7 +42,7 @@ class Login extends StatelessWidget {
               type: TextInputType.text,
               label: "Username",
               controller: username,
-              prefixIcon: Icon(Icons.person, size: 28,),
+              prefixIcon: Icon(Icons.person_2_outlined, size: 24,),
             ),
             SizedBox(
               height: 10,
@@ -51,7 +51,7 @@ class Login extends StatelessWidget {
               type: TextInputType.visiblePassword,
               label: "Password",
               controller: password,
-              prefixIcon: Icon(Icons.lock_outline,size: 28,),
+              prefixIcon: Icon(Icons.lock_outline,size: 24,),
             ),
             SizedBox(
               height: 10,
@@ -65,7 +65,7 @@ class Login extends StatelessWidget {
                     ));
               },
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: SizedBox(
                   width: double.infinity,
                   child: Container(
@@ -88,7 +88,7 @@ class Login extends StatelessWidget {
             RichText(
               text: TextSpan(
                   text: " Forgot Password? ",
-                  style: TextStyle(color: Colors.deepOrange)),
+                  style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.bold)),
             ),
             SizedBox(
               height: 150,
@@ -99,7 +99,7 @@ class Login extends StatelessWidget {
                   text: "Don't have an account?",
                   style: TextStyle(color: Colors.black)),
               TextSpan(
-                  text: " Sign Up ",
+                  text: "   Sign Up ",
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       Navigator.push(

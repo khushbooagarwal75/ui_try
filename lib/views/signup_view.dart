@@ -32,10 +32,10 @@ class SignUp extends StatelessWidget {
             Text(
               "Create your account",
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                   color: Colors.black,
                   decoration: TextDecoration.none,
-                  fontWeight: FontWeight.bold),
+                  ),
             ),
             SizedBox(
               height: 80,
@@ -44,7 +44,7 @@ class SignUp extends StatelessWidget {
               type: TextInputType.text,
               label: "Username",
               controller: username,
-              prefixIcon: Icon(Icons.person,size: 28,),
+              prefixIcon: Icon(Icons.person_2_outlined,size: 24,),
             ),
             SizedBox(
               height: 10,
@@ -53,7 +53,7 @@ class SignUp extends StatelessWidget {
               type: TextInputType.emailAddress,
               label: "Email",
               controller: email,
-              prefixIcon: Icon(Icons.email,size: 28,),
+              prefixIcon: Icon(Icons.email,size: 24,),
             ),
             SizedBox(
               height: 10,
@@ -61,7 +61,7 @@ class SignUp extends StatelessWidget {
             CustomTextfield(
               label: "Password",
               controller: password,
-              prefixIcon: Icon(Icons.lock_outline, size: 28,), type: TextInputType.visiblePassword,
+              prefixIcon: Icon(Icons.lock_outline, size: 24,), type: TextInputType.visiblePassword,
             ),
             SizedBox(
               height: 10,
@@ -70,7 +70,7 @@ class SignUp extends StatelessWidget {
               type:TextInputType.visiblePassword,
               label: "Confirm Password",
               controller: confirmPassword,
-              prefixIcon: Icon(Icons.lock_outline, size: 28,),
+              prefixIcon: Icon(Icons.lock_outline, size: 24,),
             ),
             SizedBox(
               height: 10,

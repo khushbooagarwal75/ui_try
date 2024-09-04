@@ -10,7 +10,7 @@ class CustomTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0),
+      padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 0),
       child: TextField(
         controller: controller,
         keyboardType: type,
@@ -18,6 +18,9 @@ class CustomTextfield extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           hintText: label,
+          hintStyle: TextStyle(
+            color: Colors.grey
+          ),
           filled: true,
           fillColor: Colors.deepOrange.shade50,
           border: OutlineInputBorder(
