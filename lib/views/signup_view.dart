@@ -16,10 +16,11 @@ class SignUp extends StatelessWidget {
     TextEditingController confirmPassword = TextEditingController();
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "Sign up",
